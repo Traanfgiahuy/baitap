@@ -15,26 +15,42 @@ class ProductSeeder extends Seeder
     {
         DB::table('products')->insert([
             [
-                'name' => 'Laptop Dell XPS 13',
+                'title' => 'Laptop Dell XPS 13',
                 'price' => 1200.99,
-                'description' => 'High-end ultrabook with powerful performance.',
+                'content' => 'Rất đẹp',
+                'sale_price' => 1200.00,
+                'short_description' => 'High-end ultrabook with powerful performance.',
+                'status' => '1',
+                'category_id' => 1,
+                'thumbnail' => fake()->imageUrl(640, 480, 'technology', true, 'Laptop'),
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            
+            [
+                'title' => 'Iphone 13',
+                'price' => 1200.99,
+                'content' => 'Rất đẹp',
+                'sale_price' => 1200.00,
+                'short_description' => 'High-end ultrabook with powerful performance.',
+                'status' => '1',
+                'category_id' => 2,
+                'thumbnail' => fake()->imageUrl(640, 480, 'technology', true, 'Laptop'),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
             [
-                'name' => 'iPhone 15 Pro',
-                'price' => 999.99,
-                'description' => 'Flagship Apple smartphone with advanced camera features.',
+                'title' => 'Iphone 15',
+                'price' => 1200.99,
+                'content' => 'Rất đẹp',
+                'sale_price' => 1200.00,
+                'short_description' => 'High-end ultrabook with powerful performance.',
+                'status' => '1',
+                'category_id' => 3,
+                'thumbnail' => fake()->imageUrl(640, 480, 'technology', true, 'Laptop'),
                 'created_at' => now(),
                 'updated_at' => now()
             ],
-            [
-                'name' => 'Sony WH-1000XM5',
-                'price' => 399.99,
-                'description' => 'Premium noise-canceling headphones.',
-                'created_at' => now(),
-                'updated_at' => now()
-            ]
         ]);
     }
 }

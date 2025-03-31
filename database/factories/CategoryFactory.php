@@ -27,8 +27,8 @@ class CategoryFactory extends Factory
             'name' => fake()->word(), 
             'desciption' => fake()->sentence(),
             'slug'=> fake()->slug(),
-            
             'status'=> fake()->boolean(),
+            'thumbnail' => fake()->imageUrl(640, 480, 'cats', true, 'Faker'),
             'created_at' => now(),
             'updated_at' => now(),
         ];

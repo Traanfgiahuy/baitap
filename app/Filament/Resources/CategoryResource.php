@@ -9,12 +9,16 @@ use Filament\Forms;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Forms\FormsComponent;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+
+use function Laravel\Prompts\form;
 
 class CategoryResource extends Resource
 {
@@ -55,8 +59,18 @@ class CategoryResource extends Resource
 
             ])
             ->filters([
-                //
+                SelectFilter::make('category_id')
+                ->label('Sản Phẩm')
+                ->options(Category::all()->pluck('name', 'id')),
+
+                Tables\Filters\Filter::make('created_at')
+                ->form([
+                    Forms\Components\DateTimePicker::make('created_from')
+                    ->label('Tạo từ')
+                    ->rules('date'),
+                ])
             ])
+            
             ->actions([
                 Tables\Actions\EditAction::make(),
             ])

@@ -13,9 +13,9 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         DB::table('categories')->insert([
-            ['name' => 'Máy vi tính','desciption'=>'Thật đẹp','slug'=>'ngáo hả' , 'status'=> '1','created_at' => now(), 'updated_at' => now()],
-            ['name' => 'Máy vi tính','desciption'=>'Thật đẹp','slug'=>'ngáo hả' , 'status'=> '1','created_at' => now(), 'updated_at' => now()],
-            ['name' => 'Máy vi tính','desciption'=>'Thật đẹp','slug'=>'ngáo hả' , 'status'=> '1','created_at' => now(), 'updated_at' => now()],
+            ['id' => 1 ,'name' => 'Máy vi tính','desciption'=>'Thật đẹp','slug'=>'ngáo hả' , 'status'=> '1',  'thumbnail' => fake()->imageUrl(640, 480, 'technology', true, 'Laptop'),'created_at' => now(), 'updated_at' => now()],
+            ['id' =>2 ,'name' => 'Máy vi tính','desciption'=>'Thật đẹp','slug'=>'đẹp quá' , 'status'=> '1',  'thumbnail' => fake()->imageUrl(640, 480, 'technology', true, 'Laptop'),'created_at' => now(), 'updated_at' => now()],
+            ['id' =>3 ,'name' => 'Máy vi tính','desciption'=>'Thật đẹp','slug'=>'tuyệt vời' , 'status'=> '1', 'thumbnail' => fake()->imageUrl(640, 480, 'technology', true, 'Laptop'),'created_at' => now(), 'updated_at' => now()],
             
             
         ]);
